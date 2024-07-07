@@ -54,7 +54,6 @@ const ListedBooks = () => {
          setDisplaySortBooks(sortedReadBooks);
       }
    }
-
    return (
       <div className="mt-4 px-2 md:px-0">
          {/* Filtering books with descending order */}
