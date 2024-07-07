@@ -11,7 +11,7 @@ const Error = () => {
                   <p className="text-red-600 text-2xl">{Err.status} page not found</p>
                </div> :
                <div>
-                  <p className="text-red-500 bg-black p-5 rounded text-lg">
+                  <p className="text-yellow-400 bg-black p-5 rounded text-lg">
                      Opps! an unexpected error has been occurred
                   </p>
                </div>
