@@ -35,20 +35,29 @@ const Read = () => {
    };
 
    return (
-      <div className="mt-6 px-2 md:px-0 w-full h-[300px] mx-auto">
-         <ResponsiveContainer width="100%" height="100%">
-            <BarChart data={readBookPages} margin={{ top: 20, bottom: 5 }}>
-               <CartesianGrid strokeDasharray="3 3" />
-               <XAxis dataKey="name" />
-               <YAxis />
-               <Tooltip />
-               <Bar dataKey="pages" fill="#8884d8" shape={<TriangleBar />} label={{ position: 'top' }}>
-                  {readBookPages.map((entry, index) => (
-                     <Cell key={`cell-${index}`} fill={colors[index % colors.length]} />
-                  ))}
-               </Bar>
-            </BarChart>
-         </ResponsiveContainer>
+      <div className="mt-6 px-2 md:px-0  mx-auto">
+         {
+            readBookPages.length > 0 ?
+               <div className='w-full h-[350px]'>
+                  <ResponsiveContainer width="100%" height="100%">
+                     <BarChart data={readBookPages} margin={{ top: 20, bottom: 5 }}>
+                        <CartesianGrid strokeDasharray="3 3" />
+                        <XAxis dataKey="name" />
+                        <YAxis />
+                        <Tooltip />
+                        <Bar dataKey="pages" fill="#8884d8" shape={<TriangleBar />} label={{ position: 'top' }}>
+                           {readBookPages.map((entry, index) => (
+                              <Cell key={`cell-${index}`} fill={colors[index % colors.length]} />
+                           ))}
+                        </Bar>
+                     </BarChart>
+                  </ResponsiveContainer>
+               </div> :
+               <div className=" md:text-center">
+                  <p className='text-yellow-700'>You haven&apos;t finished a book yet !</p>
+                  <p >If you compleate any books and want to show of a bar chart, click on the Read button.</p>
+               </div>
+         }
       </div>
    );
 };
