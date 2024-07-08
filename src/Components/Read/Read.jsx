@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { getReadBooks } from '../Utility/utility';
 import { useLoaderData } from 'react-router-dom';
 import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import { Helmet } from 'react-helmet-async';
 
 const colors = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', 'red', 'pink'];
 
@@ -58,6 +59,9 @@ const Read = () => {
                   <p >If you compleate any books and want to show of a bar chart, click on the Read button.</p>
                </div>
          }
+         <Helmet>
+            <title>Book Vibe | Pages to read</title>
+         </Helmet>
       </div>
    );
 };

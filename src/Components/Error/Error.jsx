@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { useRouteError } from "react-router-dom";
 
 const Error = () => {
@@ -5,6 +6,9 @@ const Error = () => {
    // console.log(Err)
    return (
       <div className="flex h-dvh justify-center items-center">
+         <Helmet>
+            <title>Book Vibe | Error</title>
+         </Helmet>
          {
             Err.status === 404 ?
                < div >

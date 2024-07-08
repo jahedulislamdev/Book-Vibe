@@ -2,6 +2,7 @@ import { useLoaderData, useParams } from "react-router-dom";
 import { saveReadBooks, saveWishList } from "../Utility/utility";
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from "react-toastify";
+import { Helmet } from "react-helmet-async";
 const BookDetails = () => {
    const LoadBookData = useLoaderData();
    const { id } = useParams();
@@ -42,6 +43,9 @@ const BookDetails = () => {
             </div>
             <ToastContainer />
          </div>
+         <Helmet>
+            <title>Book Vibe | BooK Details {id}</title>
+         </Helmet>
       </div>
    );
 };

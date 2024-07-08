@@ -3,6 +3,7 @@ import { getReadBooks, getWishList } from "../Utility/utility";
 import { useEffect, useState } from "react";
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
+import { Helmet } from "react-helmet-async";
 
 const ListedBooks = () => {
    const BooksData = useLoaderData();
@@ -149,6 +150,9 @@ const ListedBooks = () => {
                )}
             </TabPanel>
          </Tabs>
+         <Helmet>
+            <title>Book Vibe | Listed Books</title>
+         </Helmet>
       </div>
    );
 };
